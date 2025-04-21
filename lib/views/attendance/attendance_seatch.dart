@@ -1,4 +1,4 @@
-import 'package:d_u/views/attendance/student_attendance.dart';
+import 'package:d_m_u_attendance_app/views/attendance/student_attendance.dart';
 import 'package:flutter/material.dart';
 
 class AttendanceSearch extends StatelessWidget {

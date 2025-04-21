@@ -1,5 +1,5 @@
-import 'package:d_u/views/home/homepage.dart';
-import 'package:d_u/views/sign_in/signin_screens.dart';
+import 'package:d_m_u_attendance_app/views/home/homepage.dart';
+import 'package:d_m_u_attendance_app/views/sign_in/signin_screens.dart';
 import 'package:flutter/material.dart';
 
 class Settingpage extends StatefulWidget {

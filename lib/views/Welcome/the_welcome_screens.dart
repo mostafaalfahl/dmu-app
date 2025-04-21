@@ -1,5 +1,5 @@
-import 'package:d_u/views/sign_in/signin_screens.dart';
-import 'package:d_u/widgets/choose_button.dart';
+import 'package:d_m_u_attendance_app/views/sign_in/signin_screens.dart';
+import 'package:d_m_u_attendance_app/widgets/choose_button.dart';
 import 'package:flutter/material.dart';
 
 class OnboardingScreen extends StatefulWidget {

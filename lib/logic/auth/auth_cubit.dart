@@ -1,10 +1,8 @@
-// lib/bloc/auth_cubit.dart
 import 'dart:developer';
-
 import 'package:bloc/bloc.dart';
+import 'package:d_m_u_attendance_app/apis/auth_api.dart';
+import 'package:d_m_u_attendance_app/models/user.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import '../../apis/auth_api.dart';
-import '../../models/user.dart';
 import 'auth_state.dart';
 
 class AuthCubit extends Cubit<AuthState> {
@@ -25,7 +23,7 @@ class AuthCubit extends Cubit<AuthState> {
       emit(AuthAuthenticated(user));
     } catch (e) {
       log(e.toString());
-      emit( const AuthFailure('Wrong Password/Email'));
+      emit(const AuthFailure('Wrong Password/Email'));
     }
   }
 

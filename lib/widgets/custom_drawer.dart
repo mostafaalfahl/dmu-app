@@ -1,8 +1,8 @@
-import 'package:d_u/views/attendance/attendance_seatch.dart';
-import 'package:d_u/views/editprofile/editpage.dart';
-import 'package:d_u/views/setting/settingpage.dart';
-import 'package:d_u/views/shedule/schedule_view.dart';
-import 'package:d_u/views/sign_in/signin_screens.dart';
+import 'package:d_m_u_attendance_app/views/attendance/attendance_seatch.dart';
+import 'package:d_m_u_attendance_app/views/editprofile/editpage.dart';
+import 'package:d_m_u_attendance_app/views/setting/settingpage.dart';
+import 'package:d_m_u_attendance_app/views/shedule/schedule_view.dart';
+import 'package:d_m_u_attendance_app/views/sign_in/signin_screens.dart';
 import 'package:flutter/material.dart';
 
 class CustomDrawer extends StatelessWidget {

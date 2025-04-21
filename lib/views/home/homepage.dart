@@ -1,6 +1,6 @@
-import 'package:d_u/views/active_sessions/sessions.dart';
-import 'package:d_u/widgets/custom_drawer.dart';
-import 'package:d_u/widgets/home_appbar.dart';
+import 'package:d_m_u_attendance_app/views/active_sessions/sessions.dart';
+import 'package:d_m_u_attendance_app/widgets/custom_drawer.dart';
+import 'package:d_m_u_attendance_app/widgets/home_appbar.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -34,7 +34,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => SessionsView()),
+                      MaterialPageRoute(
+                        builder: (context) => SessionsView(),
+                      ),
                     );
                   },
                   child: const Text(

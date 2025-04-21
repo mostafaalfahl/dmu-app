@@ -1,7 +1,7 @@
+import 'package:d_m_u_attendance_app/views/forget/forget_screens.dart';
+import 'package:d_m_u_attendance_app/views/home/homepage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:d_u/views/forget/forget_screens.dart';
-import 'package:d_u/views/home/homepage.dart';
 import '../../logic/auth/auth_cubit.dart';
 import '../../logic/auth/auth_state.dart';
 
@@ -124,7 +124,7 @@ class _SignInScreenState extends State<SignInScreen> {
                       ],
                     ),
                     TextButton(
-                      onPressed: () {
+                      onPressed: ()  {
                         Navigator.push(
                           context,
                           MaterialPageRoute(

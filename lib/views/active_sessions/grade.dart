@@ -1,6 +1,6 @@
 import 'dart:async';
-import 'package:d_u/views/attendance/attendance_lecturee.dart';
-import 'package:d_u/views/attendance/random_attendance.dart';
+import 'package:d_m_u_attendance_app/views/attendance/attendance_lecturee.dart';
+import 'package:d_m_u_attendance_app/views/attendance/random_attendance.dart';
 import 'package:flutter/material.dart';
 
 class GradeViewScreen extends StatefulWidget {

@@ -1,0 +1,2 @@
+G:/Flutter/d_m_u_attendance_app/android/app/.cxx/Debug/5p5c172d/arm64-v8a/CMakeFiles/edit_cache.dir
+G:/Flutter/d_m_u_attendance_app/android/app/.cxx/Debug/5p5c172d/arm64-v8a/CMakeFiles/rebuild_cache.dir

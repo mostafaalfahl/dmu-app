@@ -1,5 +1,5 @@
-import 'package:d_u/views/active_sessions/grade.dart';
-import 'package:d_u/views/home/homepage.dart';
+import 'package:d_m_u_attendance_app/views/active_sessions/grade.dart';
+import 'package:d_m_u_attendance_app/views/home/homepage.dart';
 import 'package:flutter/material.dart';
 
 class SessionsView extends StatelessWidget {
