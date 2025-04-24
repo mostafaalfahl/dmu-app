@@ -1,4 +1,6 @@
+import 'package:d_m_u_attendance_app/apis/attendance_api.dart';
 import 'package:d_m_u_attendance_app/apis/lecture_info_api.dart';
+import 'package:d_m_u_attendance_app/logic/attendance/attendance_cubit.dart';
 import 'package:d_m_u_attendance_app/logic/lecture/lecture_cubit.dart';
 import 'package:d_m_u_attendance_app/views/Welcome/the_welcome_screens.dart';
 import 'package:dio/dio.dart';
@@ -23,7 +25,14 @@ void main() async {
               dio: Dio(),
             ),
           )..getLecInfo(),
-        )
+        ),
+        BlocProvider(
+          create: (_) => AttendanceCubit(
+            AttendanceApi(
+              dio: Dio(),
+            ),
+          ),
+        ),
       ],
       child: const Attendance(),
     ),
