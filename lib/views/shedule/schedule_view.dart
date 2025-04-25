@@ -1,3 +1,4 @@
+import 'package:d_m_u_attendance_app/logic/auth/auth_cubit.dart';
 import 'package:d_m_u_attendance_app/logic/lecture/lecture_cubit.dart';
 import 'package:d_m_u_attendance_app/logic/lecture/lecture_state.dart';
 import 'package:d_m_u_attendance_app/models/lecture_model/lecture_model.dart';
@@ -11,6 +12,8 @@ class Scheduleview extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final String role = BlocProvider.of<AuthCubit>(context).role;
+
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -25,15 +28,20 @@ class Scheduleview extends StatelessWidget {
             SizedBox(width: 10),
             Text(
               'Hello, Alaa Mostafa',
-              style: TextStyle(fontSize: 20, color: Color(0xFF000D3C)),
+              style: TextStyle(
+                fontSize: 20,
+                color: Color(0xFF000D3C),
+              ),
             ),
           ],
         ),
         actions: [
           IconButton(
             iconSize: 40,
-            icon: const Icon(Icons.add_circle_outline_outlined,
-                color: Color(0xFF000D3C)),
+            icon: const Icon(
+              Icons.add_circle_outline_outlined,
+              color: Color(0xFF000D3C),
+            ),
             onPressed: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) {
                 return const AddLectureScreen();
@@ -76,8 +84,10 @@ class Scheduleview extends StatelessWidget {
                       children: [
                         TextButton.icon(
                           onPressed: () {},
-                          icon: const Icon(Icons.arrow_back,
-                              color: Color(0xFF000D3C)),
+                          icon: const Icon(
+                            Icons.arrow_back,
+                            color: Color(0xFF000D3C),
+                          ),
                           label: const Text(
                             'Oct',
                             style: TextStyle(
@@ -97,8 +107,14 @@ class Scheduleview extends StatelessWidget {
                           child: const Row(
                             mainAxisSize: MainAxisSize.min,
                             children: [
-                              Text("Dec",
-                                  style: TextStyle(color: Color(0xFF000D3C))),
+                              Text(
+                                "Dec",
+                                style: TextStyle(
+                                  color: Color(
+                                    0xFF000D3C,
+                                  ),
+                                ),
+                              ),
                               SizedBox(width: 8),
                               Icon(Icons.arrow_forward),
                             ],
@@ -134,8 +150,11 @@ class Scheduleview extends StatelessWidget {
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Text(
-                                        lectures[index].lectureDay ??
-                                            'not available',
+                                        role == 'doctor'
+                                            ? lectures[index].lectureDay ??
+                                                'Not Available'
+                                            : lectures[index].sectionDay ??
+                                                'Not Available',
                                         style: const TextStyle(
                                             color: Colors.white,
                                             fontWeight: FontWeight.bold,
@@ -168,12 +187,26 @@ class Scheduleview extends StatelessWidget {
                                         height: 20,
                                       ),
                                       const SizedBox(height: 4),
-                                      Text(lectures[index].course!.name!,
-                                          style: const TextStyle(
-                                              color: Color(0xFF000D3C))),
-                                      Text(lectures[index].lectureHall!.name!,
-                                          style: const TextStyle(
-                                              color: Color(0xFF000D3C))),
+                                      Text(
+                                        lectures[index].course!.name!,
+                                        style: const TextStyle(
+                                          color: Color(
+                                            0xFF000D3C,
+                                          ),
+                                        ),
+                                      ),
+                                      Text(
+                                        role == 'doctor'
+                                            ? lectures[index].lectureHall!.name!
+                                            : lectures[index]
+                                                .sectionHall!
+                                                .name!,
+                                        style: const TextStyle(
+                                          color: Color(
+                                            0xFF000D3C,
+                                          ),
+                                        ),
+                                      ),
                                       const SizedBox(height: 8),
                                       Row(
                                         children: [
@@ -185,14 +218,24 @@ class Scheduleview extends StatelessWidget {
                                           const SizedBox(width: 5),
                                           Text(
                                             formatTime(
-                                              lectures[index].lectureStartHour!,
+                                              role == 'doctor'
+                                                  ? lectures[index]
+                                                      .lectureStartHour!
+                                                  : lectures[index]
+                                                      .sectionStartHour!,
                                             ),
                                             style: const TextStyle(
                                               color: Color(0xFF000D3C),
                                             ),
                                           ),
                                           Text(
-                                            '   -   ${formatTime(lectures[index].lectureEndHour!)}',
+                                            '   -   ${formatTime(
+                                              role == 'doctor'
+                                                  ? lectures[index]
+                                                      .lectureEndHour!
+                                                  : lectures[index]
+                                                      .sectionEndHour!,
+                                            )}',
                                             style: const TextStyle(
                                               color: Color(0xFF000D3C),
                                             ),
@@ -204,9 +247,17 @@ class Scheduleview extends StatelessWidget {
                                             color: Color(0xFF000D3C),
                                           ),
                                           const SizedBox(width: 5),
-                                          const Text(
-                                            '73',
-                                            style: TextStyle(
+                                          Text(
+                                            role == 'doctor'
+                                                ? lectures[index]
+                                                    .lectureHall!
+                                                    .numberOfChairsOrBenchesOrComputers
+                                                    .toString()
+                                                : lectures[index]
+                                                    .sectionHall!
+                                                    .numberOfChairsOrBenchesOrComputers
+                                                    .toString(),
+                                            style: const TextStyle(
                                               color: Color(0xFF000D3C),
                                             ),
                                           ),

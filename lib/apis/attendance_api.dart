@@ -9,8 +9,10 @@ class AttendanceApi {
   final Dio dio;
 
   Future<dynamic> openAtendance() async {
+
     final prefs = await SharedPreferences.getInstance();
     String? token = prefs.getString('token');
+    
     log(token ?? 'Token is null');
 
     var res = await dio.patch(

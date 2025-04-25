@@ -6,8 +6,10 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'auth_state.dart';
 
 class AuthCubit extends Cubit<AuthState> {
-  final ApiService _api;
   AuthCubit(this._api) : super(AuthInitial());
+
+  final ApiService _api;
+  late String role;
 
   Future<void> login(String email, String password) async {
     emit(AuthLoading());
@@ -19,6 +21,7 @@ class AuthCubit extends Cubit<AuthState> {
       // persist token
       final prefs = await SharedPreferences.getInstance();
       await prefs.setString('token', token);
+      role = user.role;
 
       emit(AuthAuthenticated(user));
     } catch (e) {

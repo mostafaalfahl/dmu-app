@@ -249,14 +249,19 @@ class _SecondScreenState extends State<GradeViewScreen> {
       builder: (context) {
         return AlertDialog(
           backgroundColor: Colors.white,
-          content: Text(alert),
+          content: Text(
+            alert,
+            style: const TextStyle(
+              fontSize: 16,
+            ),
+          ),
           actions: [
             TextButton(
               onPressed: () {
                 Navigator.of(context).pop();
               },
               child: const Text(
-                'Back',
+                'OK',
                 style: TextStyle(
                   color: Color.fromARGB(255, 21, 60, 112),
                 ),
